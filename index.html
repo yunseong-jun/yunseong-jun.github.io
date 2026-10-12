@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>전윤성 · Jeon Yunseong</title>
+  <meta name="description" content="경영정보학 전공 전윤성의 연구 포트폴리오. AI, 데이터, 비즈니스, 인간의 의사결정이 만나는 지점을 연구합니다.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="전윤성 · Jeon Yunseong">
+  <meta property="og:description" content="기술을 이해하고, 인간을 탐구하며, 더 나은 의사결정을 설계합니다.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1A2F'/%3E%3Ctext x='32' y='43' font-family='serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23EEF1F7'%3EJY%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JS가 켜져 있을 때만 모바일 메뉴 접기 등을 적용합니다. JS가 꺼져도 모든 내용은 보입니다. -->
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <!-- =====================================================
+       HEADER / NAVIGATION
+       메뉴 문구를 바꿀 때는 아래 링크 텍스트와 각 섹션의 h2 제목을 같이 바꾸세요.
+       (방문자가 클릭한 메뉴와 도착한 섹션 제목이 같아야 길을 잃지 않습니다.)
+       ===================================================== -->
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-ko">전윤성</span>
+        <span class="brand-en" lang="en">Jeon Yunseong</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <span class="menu-toggle-icon" aria-hidden="true"></span>
+        <span class="menu-toggle-label" data-menu-label>메뉴</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="주요 메뉴" data-nav>
+        <ul>
+          <li><a href="#about">소개</a></li>
+          <li><a href="#projects">연구·프로젝트</a></li>
+          <li><a href="#leadership">리더십·경험</a></li>
+          <li><a href="#interests">관심 분야</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
+  </header>
+
+  <main id="main">
+
+    <!-- =====================================================
+         SECTION 1. HERO
+         ===================================================== -->
+    <section id="top" class="hero" aria-labelledby="hero-name">
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow"><span lang="en">Management Information Systems</span> · 경영정보학 전공</p>
+
+          <h1 id="hero-name" class="hero-name">
+            전윤성
+            <span class="hero-name-en" lang="en">Jeon Yunseong</span>
+          </h1>
+
+          <p class="hero-message">기술을 이해하고, 인간을 탐구하며, <em>더 나은 의사결정</em>을 설계합니다.</p>
+
+          <p class="hero-intro">
+            AI, 데이터, 비즈니스, 그리고 사람의 의사결정이 만나는 지점을 연구하는 경영정보학 전공 학생입니다.
+            LLM이 어떤 정보를 근거로 상품을 추천하는지 실험하고, AI 에이전트가 소비자의 선택을 얼마나 현실적으로 재현할 수 있는지 연구를 설계하고 있습니다.
+            기술이 잘 작동하는지와 함께, 그 기술이 사람의 판단을 어떻게 바꾸는지 묻습니다.
+          </p>
+
+          <p class="keywords">
+            <span class="keywords-label" lang="en">Keywords</span>
+            <span class="keywords-list" lang="en"><span>LLM</span> <span>AI Agents</span> <span>Consumer Behavior</span> <span>Decision Making</span> <span>Human-AI Interaction</span> <span>AI Safety &amp; Ethics</span></span>
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">프로젝트 살펴보기 <span class="btn-arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#about" lang="en">About Me</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-labelledby="visitor-title">
+          <p class="panel-label" lang="en">For Visitors</p>
+          <h2 id="visitor-title" class="panel-title">이 페이지는</h2>
+          <p class="panel-text" data-check="audience">
+            AI와 비즈니스를 공부하는 학생과 교수님, 연구자, 프로젝트 협업을 찾는 분께
+            제 연구 관심사와 프로젝트를 소개하는 포트폴리오입니다.
+          </p>
+          <p class="panel-sub">1분 안에 둘러보기</p>
+          <ol class="quick-guide">
+            <li>
+              <a href="#about">
+                <span class="quick-q">어떤 사람인가요?</span>
+                <span class="quick-a">소개</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects">
+                <span class="quick-q">어떤 연구를 하나요?</span>
+                <span class="quick-a">연구·프로젝트</span>
+              </a>
+            </li>
+            <li>
+              <a href="#interests">
+                <span class="quick-q">무엇에 관심이 있나요?</span>
+                <span class="quick-a">관심 분야</span>
+              </a>
+            </li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 2. ABOUT ME
+         ===================================================== -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" lang="en">About Me</p>
+          <h2 id="about-title" class="section-title">소개</h2>
+          <p class="section-lede">기술이 어떻게 작동하는지, 그리고 사람이 그 기술을 어떻게 쓰고 영향을 받는지를 함께 공부합니다.</p>
+        </header>
+
+        <div class="about-grid">
+          <div class="prose" data-reveal>
+            <p>
+              경영정보학을 전공하며 AI와 비즈니스가 만나는 지점을 공부합니다.
+              모델이 어떻게 작동하는지 이해하는 데서 그치지 않고, 사람과 조직이 그 기술을 어떻게 받아들이고
+              그 과정에서 어떤 영향을 받는지에 더 큰 관심을 둡니다.
+            </p>
+            <p>
+              연구는 당연하게 여겨지는 기준에 질문을 던지는 데서 시작합니다.
+              예를 들어 AI의 추천이 객관적일 것이라고 가정하는 대신, AI가 실제로 어떤 정보를 근거로 판단하는지 실험으로 확인합니다.
+            </p>
+            <p>
+              제도와 조직, 기술이 사람의 행동을 어떻게 바꾸는지, 효율성과 공정성, 자율성과 통제가 부딪힐 때
+              어떤 균형이 필요한지도 고민합니다. 하나의 이론으로 답을 정하기보다 서로 다른 관점과 이론을
+              나란히 놓고 비판적으로 비교하는 방식을 좋아합니다.
+            </p>
+          </div>
+
+          <dl class="fact-list" data-reveal>
+            <div class="fact">
+              <dt>전공 <span lang="en">Major</span></dt>
+              <dd>경영정보학<br><span class="fact-en" lang="en">Management Information Systems</span></dd>
+            </div>
+            <div class="fact">
+              <dt>연구 초점 <span lang="en">Focus</span></dt>
+              <dd>AI, 데이터, 비즈니스, 인간의 의사결정이 만나는 지점</dd>
+            </div>
+            <div class="fact">
+              <dt>연구 방향 <span lang="en">Direction</span></dt>
+              <dd>
+                <ul class="plain-list">
+                  <li>AI가 상품 정보를 해석하고 추천하는 방식</li>
+                  <li>LLM 기반 가상 소비자 시뮬레이션</li>
+                  <li>AI 판단의 신뢰성과 안전성</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="fact">
+              <dt>관심 분야 <span lang="en">Interests</span></dt>
+              <dd>
+                <ul class="tag-list" lang="en">
+                  <li class="tag">Artificial Intelligence</li>
+                  <li class="tag">Large Language Models</li>
+                  <li class="tag">AI Agents</li>
+                  <li class="tag">Consumer Behavior</li>
+                  <li class="tag">Decision Making</li>
+                  <li class="tag">Business Analytics</li>
+                  <li class="tag">Human-AI Interaction</li>
+                  <li class="tag">AI Safety &amp; Ethics</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="questions" data-reveal>
+          <h3 class="sub-title"><span class="sub-title-en" lang="en">Open Questions</span> 지금 붙잡고 있는 질문</h3>
+          <ul class="question-list">
+            <li>
+              <a href="#project-recommendation" data-open="detail-recommendation">
+                <span class="question-text">AI는 어떤 정보를 바탕으로 제품을 추천하는가?</span>
+                <span class="question-ref">Project A <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="#project-simulation" data-open="detail-simulation">
+                <span class="question-text">AI 에이전트는 실제 소비자의 의사결정을 얼마나 현실적으로 재현할 수 있는가?</span>
+                <span class="question-ref">Project B <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="#project-judgment" data-open="detail-judgment">
+                <span class="question-text">AI의 판단과 예측은 얼마나 믿을 수 있고, 어떻게 검증할 수 있는가?</span>
+                <span class="question-ref">Project C <span aria-hidden="true">→</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 3. RESEARCH & PROJECTS
+         프로젝트 추가 방법 (README.md의 "프로젝트 추가하기" 참고)
+         1) 아래 article.project-card 하나를 복사해 id와 내용을 바꿉니다.
+            카드 안의 직계 자식 요소 6개(meta, 제목, RQ, 요약, 필드, 하단)는 유지하세요.
+            (카드끼리 줄 높이를 맞추는 데 사용됩니다.)
+         2) 버튼의 data-open 값과 같은 id를 가진 dialog를 아래에 하나 더 만듭니다.
+         3) 진행 단계는 data-stage="1~4" 숫자만 바꾸면 막대 표시가 바뀝니다.
+         ===================================================== -->
+    <section id="projects" class="section section-wash" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head section-head-split" data-reveal>
+          <div class="section-head-text">
+            <p class="eyebrow" lang="en">Research &amp; Projects</p>
+            <h2 id="projects-title" class="section-title">연구·프로젝트</h2>
+            <p class="section-lede">
+              진행 단계가 서로 다른 세 가지 연구입니다. 카드의 단계 표시로 실험을 마친 연구와 구상 중인 연구를 구분할 수 있고,
+              카드를 누르면 자세한 설명이 열립니다.
+            </p>
+          </div>
+          <ol class="stage-legend" aria-label="진행 단계 안내">
+            <li><span class="stage-bar" aria-hidden="true"></span><span class="stage-name">검토</span><span class="stage-en" lang="en">Explore</span></li>
+            <li><span class="stage-bar" aria-hidden="true"></span><span class="stage-name">설계</span><span class="stage-en" lang="en">Design</span></li>
+            <li><span class="stage-bar" aria-hidden="true"></span><span class="stage-name">실험</span><span class="stage-en" lang="en">Experiment</span></li>
+            <li><span class="stage-bar" aria-hidden="true"></span><span class="stage-name">분석</span><span class="stage-en" lang="en">Analysis</span></li>
+          </ol>
+        </header>
+
+        <div class="project-grid">
+
+          <!-- Project A -->
+          <article id="project-recommendation" class="project-card" aria-labelledby="pa-title" data-reveal>
+            <p class="project-meta"><span class="project-code">Project A</span><span class="project-area" lang="en">AI × Business</span></p>
+            <h3 id="pa-title" class="project-title">AI 상품 추천 시스템 연구</h3>
+            <p class="project-rq"><span class="rq-label" lang="en">RQ</span>AI는 어떤 정보를 바탕으로 제품을 추천하는가?</p>
+            <p class="project-summary">
+              상품 상세페이지가 정보를 이미지로만 주는지, alt 텍스트나 요약문을 함께 주는지에 따라
+              LLM의 상품 추천이 어떻게 달라지는지 실험으로 비교했습니다.
+            </p>
+            <dl class="project-fields">
+              <div class="project-field">
+                <dt>방법·도구</dt>
+                <dd>통제 실험(3개 조건) · Claude Sonnet 5.5 · 504회 모델 호출 · 통계적 유의성 분석</dd>
+              </div>
+              <div class="project-field">
+                <dt>키워드</dt>
+                <dd>
+                  <ul class="tag-list" lang="en">
+                    <li class="tag">LLM</li>
+                    <li class="tag">AI Recommendation</li>
+                    <li class="tag">GEO</li>
+                    <li class="tag">Experimental Research</li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <div class="project-foot">
+              <p class="status">
+                <span class="stage-meter" data-stage="4" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="visually-hidden">진행 상태:</span>
+                <span class="status-text">실험·분석 수행</span>
+              </p>
+              <button class="project-open" type="button" data-open="detail-recommendation" aria-haspopup="dialog">
+                자세히 보기<span class="visually-hidden">: AI 상품 추천 시스템 연구</span>
+                <span class="project-open-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project B -->
+          <article id="project-simulation" class="project-card" aria-labelledby="pb-title" data-reveal>
+            <p class="project-meta"><span class="project-code">Project B</span><span class="project-area" lang="en">Human × Business</span></p>
+            <h3 id="pb-title" class="project-title">AI 가상 소비자 시뮬레이션</h3>
+            <p class="project-rq"><span class="rq-label" lang="en">RQ</span>AI 에이전트는 실제 소비자의 의사결정을 얼마나 현실적으로 재현할 수 있는가?</p>
+            <p class="project-summary">
+              서로 다른 특성을 가진 LLM 기반 가상 소비자 에이전트로 소비자의 선택 행동을 시뮬레이션하는 연구를
+              구상하고 설계하고 있습니다.
+            </p>
+            <dl class="project-fields">
+              <div class="project-field">
+                <dt>방법·도구</dt>
+                <dd>LLM 에이전트 설계 · 컨조인트 분석 · 소비자 행동 이론 · 선택 분포 비교(계획)</dd>
+              </div>
+              <div class="project-field">
+                <dt>키워드</dt>
+                <dd>
+                  <ul class="tag-list" lang="en">
+                    <li class="tag">AI Agent</li>
+                    <li class="tag">Consumer Simulation</li>
+                    <li class="tag">Decision Science</li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <div class="project-foot">
+              <p class="status">
+                <span class="stage-meter" data-stage="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="visually-hidden">진행 상태:</span>
+                <span class="status-text">연구 구상·설계</span>
+              </p>
+              <button class="project-open" type="button" data-open="detail-simulation" aria-haspopup="dialog">
+                자세히 보기<span class="visually-hidden">: AI 가상 소비자 시뮬레이션</span>
+                <span class="project-open-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project C -->
+          <article id="project-judgment" class="project-card" aria-labelledby="pc-title" data-reveal>
+            <p class="project-meta"><span class="project-code">Project C</span><span class="project-area" lang="en">AI × Society</span></p>
+            <h3 id="pc-title" class="project-title">AI 판결예측 및 안전성 검증 연구</h3>
+            <p class="project-rq"><span class="rq-label" lang="en">RQ</span>AI의 판단과 예측은 얼마나 믿을 수 있고, 어떻게 검증할 수 있는가?</p>
+            <p class="project-summary">
+              AI 기반 판단과 판결예측이 얼마나 신뢰할 수 있고 안전한지, 이를 어떻게 평가할 수 있는지
+              연구 방향을 검토하고 있습니다.
+            </p>
+            <dl class="project-fields">
+              <div class="project-field">
+                <dt>방법·도구</dt>
+                <dd>AI 평가 방법론 · 편향·일관성 분석 · 안전성 검증 (검토 중)</dd>
+              </div>
+              <div class="project-field">
+                <dt>키워드</dt>
+                <dd>
+                  <ul class="tag-list" lang="en">
+                    <li class="tag">AI Safety</li>
+                    <li class="tag">AI Evaluation</li>
+                    <li class="tag">Decision Making</li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <div class="project-foot">
+              <p class="status">
+                <span class="stage-meter" data-stage="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="visually-hidden">진행 상태:</span>
+                <span class="status-text">연구 방향 검토</span>
+              </p>
+              <button class="project-open" type="button" data-open="detail-judgment" aria-haspopup="dialog">
+                자세히 보기<span class="visually-hidden">: AI 판결예측 및 안전성 검증 연구</span>
+                <span class="project-open-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- ---------- 프로젝트 상세 (dialog) ---------- -->
+
+        <!-- Detail A -->
+        <dialog id="detail-recommendation" class="project-dialog" aria-labelledby="detail-a-title">
+          <div class="dialog-inner">
+            <header class="dialog-head">
+              <p class="project-meta"><span class="project-code">Project A</span><span class="project-area" lang="en">AI × Business</span></p>
+              <h3 id="detail-a-title" class="dialog-title">AI 상품 추천 시스템 연구</h3>
+              <p class="dialog-rq"><span class="rq-label" lang="en">RQ</span>AI는 어떤 정보를 바탕으로 제품을 추천하는가?</p>
+              <button class="dialog-close" type="button" data-close>닫기 <span aria-hidden="true">×</span></button>
+            </header>
+
+            <div class="dialog-body">
+              <section class="detail-block">
+                <h4 class="detail-title">연구 주제 <span lang="en">Topic</span></h4>
+                <p>상품 상세페이지의 정보 제공 방식이 LLM의 상품 추천 결과에 미치는 영향</p>
+              </section>
+
+              <section class="detail-block">
+                <h4 class="detail-title">왜 이 질문인가 <span lang="en">Motivation</span></h4>
+                <p>
+                  생성형 AI가 상품을 비교하고 추천하는 역할을 맡기 시작하면서, 판매자가 같은 상품 정보를 어떤 형태로
+                  제공하느냐가 AI의 판단에 영향을 줄 수 있습니다. 이 연구는 정보 구조와 AI 추천 사이의 연결 고리를
+                  실험으로 확인하려는 시도입니다. 생성형 AI 환경에서 정보가 노출되고 인용되는 방식을 다루는
+                  <span lang="en">GEO(Generative Engine Optimization)</span> 관점과도 맞닿아 있습니다.
+                </p>
+              </section>
+
+              <section class="detail-block">
+                <h4 class="detail-title">비교한 세 가지 정보 제공 방식 <span lang="en">Conditions</span></h4>
+                <ol class="conditions">
+                  <li class="condition">
+                    <div class="mini-page" aria-hidden="true">
+                      <span class="mini-img"></span>
+                    </div>
+                    <p class="condition-label">조건 1</p>
+                    <p class="condition-name">이미지 중심</p>
+                    <p class="condition-desc">상품 정보가 주로 이미지 안에 담긴 상세페이지</p>
+                  </li>
+                  <li class="condition">
+                    <div class="mini-page" aria-hidden="true">
+                      <span class="mini-img"></span>
+                      <span class="mini-alt">alt=""</span>
+                    </div>
+                    <p class="condition-label">조건 2</p>
+                    <p class="condition-name">이미지 + alt 텍스트</p>
+                    <p class="condition-desc">이미지에 대체 텍스트(alt)를 함께 제공</p>
+                  </li>
+                  <li class="condition">
+                    <div class="mini-page" aria-hidden="true">
+                      <span class="mini-img"></span>
+                      <span class="mini-lines"><i></i><i></i><i></i></span>
+                    </div>
+                    <p class="condition-label">조건 3</p>
+                    <p class="condition-name">이미지 + 요약문</p>
+                    <p class="condition-desc">이미지와 함께 핵심 정보를 요약한 텍스트 제공</p>
+                  </li>
+                </ol>
+              </section>
+
+              <section class="detail-block">
+                <h4 class="detail-title">실험 규모와 분석 <span lang="en">Setup</span></h4>
+                <dl class="spec-list">
+                  <div class="spec"><dt>모델</dt><dd lang="en">Claude Sonnet 5.5</dd></div>
+                  <div class="spec"><dt>모델 호출</dt><dd><strong class="num">504</strong>회</dd></div>
+                  <div class="spec"><dt>비교 조건</dt><dd><strong class="num">3</strong>가지 정보 제공 방식</dd></div>
+                  <div class="spec"><dt>분석 지표</dt><dd>추천 선택률 · 통계적 유의성 · 근거 인용 방식</dd></div>
+                </dl>
+              </section>
+
+              <section class="detail-block">
+                <h4 class="detail-title">확장 탐색 <span lang="en">Beyond the Lab</span></h4>
+                <p>
+                  통제된 실험 밖에서도, 실제 웹 검색 환경에서 이미지·텍스트·검색 색인 정보가
+                  AI 추천에 어떻게 전달되는지 탐색했습니다.
+                </p>
+              </section>
+
+              <!-- 결과가 정리되면 data-placeholder 속성을 지우고 내용을 채우세요. -->
+              <section class="detail-block detail-note" data-placeholder>
+                <h4 class="detail-title">결과 요약 <span lang="en">Findings</span></h4>
+                <p>주요 결과는 정리가 끝나는 대로 이곳에 추가합니다.</p>
+              </section>
+            </div>
+
+            <footer class="dialog-foot">
+              <ul class="tag-list" lang="en">
+                <li class="tag">LLM</li>
+                <li class="tag">AI Recommendation</li>
+                <li class="tag">GEO</li>
+                <li class="tag">Experimental Research</li>
+              </ul>
+              <p class="status">
+                <span class="stage-meter" data-stage="4" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="visually-hidden">진행 상태:</span>
+                <span class="status-text">실험·분석 수행</span>
+              </p>
+            </footer>
+          </div>
+        </dialog>
+
+        <!-- Detail B -->
+        <dialog id="detail-simulation" class="project-dialog" aria-labelledby="detail-b-title">
+          <div class="dialog-inner">
+            <header class="dialog-head">
+              <p class="project-meta"><span class="project-code">Project B</span><span class="project-area" lang="en">Human × Business</span></p>
+              <h3 id="detail-b-title" class="dialog-title">AI 가상 소비자 시뮬레이션</h3>
+              <p class="dialog-rq"><span class="rq-label" lang="en">RQ</span>AI 에이전트는 실제 소비자의 의사결정을 얼마나 현실적으로 재현할 수 있는가?</p>
+              <button class="dialog-close" type="button" data-close>닫기 <span aria-hidden="true">×</span></button>
+            </header>
+
+            <div class="dialog-body">
+              <section class="detail-block">
+                <h4 class="detail-title">연구 주제 <span lang="en">Topic</span></h4>
+                <p>LLM 기반 가상 소비자 에이전트를 이용한 소비자 의사결정 시뮬레이션</p>
+              </section>
+
+              <section class="detail-block">
+                <h4 class="detail-title">연구 구상 <span lang="en">Research Plan</span></h4>
+                <ol class="flow">
+                  <li class="flow-step">
+                    <p class="flow-name">가상 소비자 만들기</p>
+                    <p class="flow-desc">서로 다른 특성을 가진 가상 소비자 에이전트를 생성합니다.</p>
+                  </li>
+                  <li class="flow-step">
+                    <p class="flow-name">선택 시뮬레이션</p>
+                    <p class="flow-desc">제품 정보와 소비자 특성에 따라 어떤 선택을 하는지 시뮬레이션합니다.</p>
+                  </li>
+                  <li class="flow-step">
+                    <p class="flow-name">실제 데이터와 비교</p>
+                    <p class="flow-desc">실제 소비자 데이터와 가상 소비자의 선택 분포를 비교합니다.</p>
+                  </li>
+                </ol>
+              </section>
+
+              <section class="detail-block">
+                <h4 class="detail-title">이론적 기반 <span lang="en">Foundations</span></h4>
+                <dl class="spec-list">
+                  <div class="spec"><dt>분석 방법</dt><dd>컨조인트 분석 <span class="muted" lang="en">Conjoint Analysis</span></dd></div>
+                  <div class="spec"><dt>이론</dt><dd>소비자 행동 이론 <span class="muted" lang="en">Consumer Behavior Theory</span></dd></div>
+                </dl>
+                <p>두 가지를 연구 설계에 활용해, 가상 소비자의 선택을 실제 소비자의 선택과 비교할 수 있는 기준을 세우고자 합니다.</p>
+              </section>
+
+              <section class="detail-block detail-note">
+                <h4 class="detail-title">현재 단계 <span lang="en">Status</span></h4>
+                <p>초기 연구 구상과 설계 단계입니다. 위 내용은 연구 계획이며, 실제 검증 결과는 아직 확보되지 않았습니다.</p>
+              </section>
+            </div>
+
+            <footer class="dialog-foot">
+              <ul class="tag-list" lang="en">
+                <li class="tag">AI Agent</li>
+                <li class="tag">Consumer Simulation</li>
+                <li class="tag">Decision Science</li>
+              </ul>
+              <p class="status">
+                <span class="stage-meter" data-stage="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="visually-hidden">진행 상태:</span>
+                <span class="status-text">연구 구상·설계</span>
+              </p>
+            </footer>
+          </div>
+        </dialog>
+
+        <!-- Detail C -->
+        <dialog id="detail-judgment" class="project-dialog" aria-labelledby="detail-c-title">
+          <div class="dialog-inner">
+            <header class="dialog-head">
+              <p class="project-meta"><span class="project-code">Project C</span><span class="project-area" lang="en">AI × Society</span></p>
+              <h3 id="detail-c-title" class="dialog-title">AI 판결예측 및 안전성 검증 연구</h3>
+              <p class="dialog-rq"><span class="rq-label" lang="en">RQ</span>AI의 판단과 예측은 얼마나 믿을 수 있고, 어떻게 검증할 수 있는가?</p>
+              <button class="dialog-close" type="button" data-close>닫기 <span aria-hidden="true">×</span></button>
+            </header>
+
+            <div class="dialog-body">
+              <section class="detail-block">
+                <h4 class="detail-title">연구 주제 <span lang="en">Topic</span></h4>
+                <p>AI 기반 판단 및 판결예측의 신뢰성과 안전성 탐구</p>
+              </section>
+
+              <section class="detail-block">
+                <h4 class="detail-title">관심 내용 <span lang="en">Focus Areas</span></h4>
+                <ul class="focus-grid">
+                  <li class="focus-item">
+                    <p class="focus-name">신뢰성 <span lang="en">Reliability</span></p>
+                    <p class="focus-desc">AI의 판단과 예측 결과를 얼마나 믿을 수 있는가</p>
+                  </li>
+                  <li class="focus-item">
+                    <p class="focus-name">편향과 일관성 <span lang="en">Bias &amp; Consistency</span></p>
+                    <p class="focus-desc">AI 시스템의 판단에 편향이 있는지, 같은 사안에 일관되게 판단하는지</p>
+                  </li>
+                  <li class="focus-item">
+                    <p class="focus-name">안전성 평가 <span lang="en">Safety Evaluation</span></p>
+                    <p class="focus-desc">AI의 안전성을 어떤 방법으로 평가할 수 있는지</p>
+                  </li>
+                  <li class="focus-item">
+                    <p class="focus-name">기술과 규범 <span lang="en">Norms</span></p>
+                    <p class="focus-desc">기술적 판단과 사회적 규범 사이의 관계</p>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="detail-block detail-note">
+                <h4 class="detail-title">현재 단계 <span lang="en">Status</span></h4>
+                <p>현재 연구 방향으로 검토하고 있는 주제입니다. 연구 설계가 구체화되면 이곳에 업데이트합니다.</p>
+              </section>
+            </div>
+
+            <footer class="dialog-foot">
+              <ul class="tag-list" lang="en">
+                <li class="tag">AI Safety</li>
+                <li class="tag">AI Evaluation</li>
+                <li class="tag">Decision Making</li>
+              </ul>
+              <p class="status">
+                <span class="stage-meter" data-stage="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="visually-hidden">진행 상태:</span>
+                <span class="status-text">연구 방향 검토</span>
+              </p>
+            </footer>
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 4. LEADERSHIP & EXPERIENCE
+         제공된 사실만 적습니다. 기간이나 성과를 추가할 때는 확인된 내용만 넣으세요.
+         ===================================================== -->
+    <section id="leadership" class="section" aria-labelledby="leadership-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" lang="en">Leadership &amp; Experience</p>
+          <h2 id="leadership-title" class="section-title">리더십·경험</h2>
+          <p class="section-lede">학생회와 학회를 이끌고 해외 대학 수업에 참여하며, 사람과 조직, 문화를 가까이에서 경험했습니다.</p>
+        </header>
+
+        <div class="exp-grid">
+          <article class="exp-item" data-reveal>
+            <div class="exp-head">
+              <p class="exp-type" lang="en">Leadership</p>
+              <h3 class="exp-title">경영정보학부 학생회장</h3>
+              <p class="exp-org">제39대 학생회 <span lang="en">proMIS</span></p>
+            </div>
+            <ul class="exp-list">
+              <li>학생회 운영과 조직 리더십</li>
+              <li>학생들의 참여와 협업을 위한 활동</li>
+              <li>구성원 간 소통과 조직 관리</li>
+            </ul>
+          </article>
+
+          <article class="exp-item" data-reveal>
+            <div class="exp-head">
+              <p class="exp-type" lang="en">Academic Community</p>
+              <h3 class="exp-title">SITA 학회 부회장</h3>
+              <p class="exp-org">경영정보학 분야 학술 커뮤니티</p>
+            </div>
+            <ul class="exp-list">
+              <li>경영정보학 분야 학술 커뮤니티 활동</li>
+              <li>학술 및 프로젝트 협업</li>
+            </ul>
+          </article>
+
+          <article class="exp-item" data-reveal>
+            <div class="exp-head">
+              <p class="exp-type" lang="en">Global Experience</p>
+              <h3 class="exp-title"><span lang="en">Tec de Monterrey</span> 수업 경험</h3>
+              <p class="exp-org">멕시코 <span lang="en">Mexico</span></p>
+            </div>
+            <ul class="exp-list">
+              <li>멕시코 Tec de Monterrey에서 수업 참여</li>
+              <li>다양한 문화와 학습 환경에서의 경험</li>
+              <li>한국어·영어·스페인어가 함께 쓰이는 국제적 환경에 대한 관심</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 5. INTERESTS & PERSPECTIVES
+         ===================================================== -->
+    <section id="interests" class="section section-band" aria-labelledby="interests-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" lang="en">Interests &amp; Perspectives</p>
+          <h2 id="interests-title" class="section-title">관심 분야</h2>
+          <p class="section-lede">네 영역은 하나의 질문으로 이어집니다. 사람과 조직은 기술과 함께 어떻게 더 나은 결정을 내릴 수 있을까요?</p>
+        </header>
+
+        <figure class="domain-map" aria-labelledby="fig1-caption" data-domain-map data-reveal>
+          <div class="domain-grid">
+            <svg class="domain-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <line x1="20" y1="25" x2="80" y2="25"></line>
+              <line x1="20" y1="75" x2="80" y2="75"></line>
+              <line x1="20" y1="25" x2="20" y2="75"></line>
+              <line x1="80" y1="25" x2="80" y2="75"></line>
+              <line x1="20" y1="25" x2="80" y2="75"></line>
+              <line x1="80" y1="25" x2="20" y2="75"></line>
+            </svg>
+
+            <article class="domain" data-domain="ai" data-pos="tl">
+              <p class="domain-en" lang="en">AI &amp; Technology</p>
+              <h3 class="domain-title">AI와 기술</h3>
+              <p class="domain-q">AI는 어떤 근거로 판단하는가?</p>
+              <ul class="domain-kw" lang="en">
+                <li>Artificial Intelligence</li>
+                <li>Large Language Models</li>
+                <li>AI Agents</li>
+              </ul>
+            </article>
+
+            <article class="domain" data-domain="business" data-pos="tr">
+              <p class="domain-en" lang="en">Business &amp; Organizations</p>
+              <h3 class="domain-title">비즈니스와 조직</h3>
+              <p class="domain-q">조직과 제도는 사람의 선택을 어떻게 이끄는가?</p>
+              <ul class="domain-kw">
+                <li lang="en">Business Analytics</li>
+                <li>조직과 제도</li>
+                <li>효율성과 공정성</li>
+              </ul>
+            </article>
+
+            <article class="domain" data-domain="human" data-pos="bl">
+              <p class="domain-en" lang="en">Human Behavior</p>
+              <h3 class="domain-title">인간 행동</h3>
+              <p class="domain-q">사람은 정보와 AI 앞에서 어떻게 결정하는가?</p>
+              <ul class="domain-kw" lang="en">
+                <li>Consumer Behavior</li>
+                <li>Decision Making</li>
+                <li>Human-AI Interaction</li>
+              </ul>
+            </article>
+
+            <article class="domain" data-domain="society" data-pos="br">
+              <p class="domain-en" lang="en">Philosophy &amp; Society</p>
+              <h3 class="domain-title">철학과 사회</h3>
+              <p class="domain-q">효율과 공정, 자율과 통제는 어디서 균형을 찾는가?</p>
+              <ul class="domain-kw">
+                <li lang="en">AI Safety &amp; Ethics</li>
+                <li>자율성과 통제</li>
+                <li>사회적 규범</li>
+              </ul>
+            </article>
+
+            <div class="domain-hub">
+              <span class="hub-en" lang="en">Decision Making</span>
+              <strong class="hub-ko">의사결정</strong>
+              <span class="hub-sub">네 영역이 만나는 곳</span>
+            </div>
+          </div>
+          <figcaption id="fig1-caption" class="fig-caption">
+            <span class="fig-label" lang="en">Fig. 1</span>
+            네 관심 영역과 그 중심에 있는 질문인 의사결정. 영역 위에 마우스를 올리면 아래에서 연결된 주제가 강조됩니다.
+          </figcaption>
+        </figure>
+
+        <div class="intersections" data-reveal>
+          <h3 class="sub-title"><span class="sub-title-en" lang="en">Intersections</span> 영역이 만나는 지점</h3>
+          <ul class="x-list">
+            <li class="x-row" data-domains="ai business">
+              <span class="x-pair" lang="en">AI × Business</span>
+              <span class="x-topic">AI 상품 추천 · <span lang="en">GEO</span></span>
+              <a class="x-link" href="#project-recommendation" data-open="detail-recommendation">Project A</a>
+            </li>
+            <li class="x-row" data-domains="human business">
+              <span class="x-pair" lang="en">Human Behavior × Business</span>
+              <span class="x-topic">소비자 행동 · 가상 소비자 시뮬레이션</span>
+              <a class="x-link" href="#project-simulation" data-open="detail-simulation">Project B</a>
+            </li>
+            <li class="x-row" data-domains="ai human">
+              <span class="x-pair" lang="en">AI × Human Behavior</span>
+              <span class="x-topic"><span lang="en">Human-AI Interaction</span> · AI 에이전트</span>
+              <a class="x-link" href="#project-simulation" data-open="detail-simulation">Project B</a>
+            </li>
+            <li class="x-row" data-domains="ai society">
+              <span class="x-pair" lang="en">AI × Society</span>
+              <span class="x-topic">AI 안전성과 윤리 · 판단의 신뢰성</span>
+              <a class="x-link" href="#project-judgment" data-open="detail-judgment">Project C</a>
+            </li>
+            <li class="x-row" data-domains="business society">
+              <span class="x-pair" lang="en">Business × Society</span>
+              <span class="x-topic">조직과 제도 · 효율성과 공정성</span>
+              <a class="x-link" href="#leadership">리더십·경험</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 6. CONTACT
+         실제 주소로 바꾸는 방법:
+           <a class="contact-value">이메일 주소 추가 예정</a>
+         를 아래처럼 href와 텍스트를 넣어 바꾸세요. href가 생기면 자동으로 링크·복사 버튼이 켜집니다.
+           <a class="contact-value" href="mailto:name@example.com">name@example.com</a>
+           <a class="contact-value" href="https://github.com/아이디" target="_blank" rel="noopener">github.com/아이디</a>
+         새 링크를 추가하려면 li.contact-item 한 덩어리를 복사해 붙여 넣으면 됩니다.
+         ===================================================== -->
+    <section id="contact" class="section section-contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" lang="en">Contact</p>
+          <h2 id="contact-title" class="section-title">연락처</h2>
+          <p class="section-lede">연구 협업, 프로젝트 제안, 관심 분야에 대한 대화 모두 환영합니다.</p>
+        </header>
+
+        <ul class="contact-list" data-reveal>
+          <li class="contact-item">
+            <span class="contact-label" lang="en">Email</span>
+            <a class="contact-value">이메일 주소 추가 예정</a>
+            <button class="copy-btn" type="button" data-copy hidden>복사</button>
+          </li>
+          <li class="contact-item">
+            <span class="contact-label" lang="en">GitHub</span>
+            <a class="contact-value">GitHub 프로필 추가 예정</a>
+            <button class="copy-btn" type="button" data-copy hidden>복사</button>
+          </li>
+          <li class="contact-item">
+            <span class="contact-label" lang="en">Portfolio</span>
+            <a class="contact-value">외부 포트폴리오 추가 예정</a>
+            <button class="copy-btn" type="button" data-copy hidden>복사</button>
+          </li>
+          <li class="contact-item">
+            <span class="contact-label" lang="en">SNS</span>
+            <a class="contact-value">SNS 링크 추가 예정</a>
+            <button class="copy-btn" type="button" data-copy hidden>복사</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 전윤성 <span lang="en">Jeon Yunseong</span></p>
+      <p class="footer-meta">마지막 업데이트 <time datetime="2026-10">2026년 10월</time></p>
+      <a class="footer-top" href="#top">맨 위로 <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- 화면 낭독기에 "복사했습니다" 같은 안내를 전달하는 영역 -->
+  <p class="visually-hidden" aria-live="polite" data-live></p>
+</body>
+</html>
