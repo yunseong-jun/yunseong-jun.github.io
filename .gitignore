@@ -1,0 +1,12 @@
+# Kiro 설정 및 개인 맥락 기록 (Notion 페이지 주소 포함 — 공개하지 않음)
+.kiro/
+
+# 작업 중 참고용 이미지 (배포에 불필요)
+KakaoTalk_*.jpg
+*.jpg
+*.jpeg
+*.png
+
+# OS/에디터 부산물
+.DS_Store
+Thumbs.db
