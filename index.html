@@ -18,6 +18,9 @@
 
   <!-- JS가 켜져 있을 때만 모바일 메뉴 접기 등을 적용합니다. JS가 꺼져도 모든 내용은 보입니다. -->
   <script>document.documentElement.classList.add('js');</script>
+  <!-- Supabase: 응원 보드 저장/조회에 사용. CDN → 연결 설정 → 사이트 스크립트 순서 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -47,6 +50,7 @@
           <li><a href="#leadership">리더십·경험</a></li>
           <li><a href="#interests">관심 분야</a></li>
           <li><a href="#contact">연락처</a></li>
+          <li><a href="#board">응원 보드</a></li>
         </ul>
       </nav>
     </div>
@@ -786,6 +790,42 @@
             <a class="contact-value">SNS 링크 추가 예정</a>
             <button class="copy-btn" type="button" data-copy hidden>복사</button>
           </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 7. GUESTBOARD (응원 보드)
+         방문자가 짧은 응원/한마디를 남기는 보드.
+         입력 내용은 Supabase 데이터베이스(messages 테이블)에 저장되고,
+         최신 글부터 화면에 다시 불러와 표시됩니다.
+         연결 설정은 supabase.js, 동작은 script.js의 응원 보드 블록을 참고하세요.
+         ===================================================== -->
+    <section id="board" class="section section-wash" aria-labelledby="board-title">
+      <div class="container board-grid">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" lang="en">Guestboard</p>
+          <h2 id="board-title" class="section-title">응원 보드</h2>
+          <p class="section-lede">연구와 프로젝트에 대한 응원이나 한마디를 남겨 주세요. 남긴 글은 아래에 바로 보입니다.</p>
+        </header>
+
+        <form class="board-form" data-board-form data-reveal novalidate>
+          <div class="board-field">
+            <label class="board-label" for="board-name">이름 <span class="board-optional">(선택)</span></label>
+            <input class="board-input" id="board-name" name="name" type="text" maxlength="30" placeholder="익명" autocomplete="name">
+          </div>
+          <div class="board-field">
+            <label class="board-label" for="board-message">메시지</label>
+            <textarea class="board-input board-textarea" id="board-message" name="message" rows="3" maxlength="300" required placeholder="응원 한마디를 남겨 주세요"></textarea>
+          </div>
+          <div class="board-actions">
+            <button class="btn btn-primary" type="submit" data-board-submit>남기기 <span class="btn-arrow" aria-hidden="true">→</span></button>
+            <p class="board-status" role="status" aria-live="polite" data-board-status></p>
+          </div>
+        </form>
+
+        <ul class="board-list" data-board-list aria-live="polite">
+          <li class="board-empty" data-board-empty>아직 남겨진 메시지가 없습니다. 첫 응원을 남겨 보세요.</li>
         </ul>
       </div>
     </section>

@@ -511,4 +511,126 @@
   }
   window.addEventListener('hashchange', qaFromHash);
   qaFromHash();
+
+  /* ------------------------------------------------------------------
+     8. 응원 보드 (Supabase 저장·조회)
+        - 방문자가 남긴 메시지를 Supabase의 messages 테이블에 저장(INSERT)하고,
+          최신 글부터 다시 불러와(SELECT) 화면에 표시합니다.
+        - 연결 설정(URL/키)과 클라이언트 생성은 supabase.js에서 합니다.
+        - supabaseClient 가 없으면(설정 누락/CDN 로드 실패) 보드는 조용히 비활성화됩니다.
+     ------------------------------------------------------------------ */
+  (function initBoard() {
+    var form = $('[data-board-form]');
+    var listEl = $('[data-board-list]');
+    var emptyEl = $('[data-board-empty]');
+    var statusEl = $('[data-board-status]');
+    var submitBtn = $('[data-board-submit]');
+    if (!form || !listEl) return; // 보드 섹션이 없는 페이지면 종료
+
+    var db = window.supabaseClient;
+    if (!db) {
+      if (statusEl) statusEl.textContent = '보드를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.';
+      return;
+    }
+
+    var TABLE = 'messages';
+
+    function setStatus(msg) { if (statusEl) statusEl.textContent = msg || ''; }
+
+    // 사용자 입력을 그대로 textContent로 넣어 HTML 주입을 막습니다.
+    function timeLabel(iso) {
+      if (!iso) return '';
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+      return d.getFullYear() + '.' + pad(d.getMonth() + 1) + '.' + pad(d.getDate()) +
+             ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+    }
+
+    function renderList(rows) {
+      listEl.innerHTML = '';
+      if (!rows || !rows.length) {
+        var empty = document.createElement('li');
+        empty.className = 'board-empty';
+        empty.textContent = '아직 남겨진 메시지가 없습니다. 첫 응원을 남겨 보세요.';
+        listEl.appendChild(empty);
+        return;
+      }
+      rows.forEach(function (row) {
+        var li = document.createElement('li');
+        li.className = 'board-item';
+
+        var head = document.createElement('div');
+        head.className = 'board-item-head';
+        var name = document.createElement('span');
+        name.className = 'board-item-name';
+        name.textContent = (row.name && row.name.trim()) ? row.name.trim() : '익명';
+        var time = document.createElement('time');
+        time.className = 'board-item-time';
+        if (row.created_at) time.setAttribute('datetime', row.created_at);
+        time.textContent = timeLabel(row.created_at);
+        head.appendChild(name);
+        head.appendChild(time);
+
+        var msg = document.createElement('p');
+        msg.className = 'board-item-message';
+        msg.textContent = row.message || '';
+
+        li.appendChild(head);
+        li.appendChild(msg);
+        listEl.appendChild(li);
+      });
+    }
+
+    // 최신 글부터 조회
+    function loadMessages() {
+      setStatus('메시지를 불러오는 중…');
+      db.from(TABLE)
+        .select('id, name, message, created_at')
+        .order('created_at', { ascending: false })
+        .limit(50)
+        .then(function (res) {
+          if (res.error) {
+            setStatus('메시지를 불러오지 못했습니다: ' + res.error.message);
+            return;
+          }
+          renderList(res.data);
+          setStatus('');
+        });
+    }
+
+    // 새 메시지 저장
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var nameInput = $('#board-name', form);
+      var messageInput = $('#board-message', form);
+      var name = nameInput ? nameInput.value.trim() : '';
+      var message = messageInput ? messageInput.value.trim() : '';
+
+      if (!message) {
+        setStatus('메시지를 입력해 주세요.');
+        if (messageInput) messageInput.focus();
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+      setStatus('저장하는 중…');
+
+      db.from(TABLE)
+        .insert([{ name: name || null, message: message }])
+        .then(function (res) {
+          if (submitBtn) submitBtn.disabled = false;
+          if (res.error) {
+            setStatus('저장에 실패했습니다: ' + res.error.message);
+            return;
+          }
+          if (messageInput) messageInput.value = '';
+          setStatus('남겨 주셔서 감사합니다.');
+          announce('응원 메시지를 남겼습니다.');
+          loadMessages();
+        });
+    });
+
+    loadMessages();
+  })();
 })();
